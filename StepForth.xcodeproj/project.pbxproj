@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		FFF409A3243A7828008123DA /* StepForth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF40999243A7828008123DA /* StepForth.framework */; };
-		FFF409A8243A7828008123DA /* StepForthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF409A7243A7828008123DA /* StepForthTests.swift */; };
-		FFF409AA243A7828008123DA /* StepForth.h in Headers */ = {isa = PBXBuildFile; fileRef = FFF4099C243A7828008123DA /* StepForth.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FFF409A8243A7828008123DA /* ForthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF409A7243A7828008123DA /* ForthTests.swift */; };
+		FFF409B4243A9BA3008123DA /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF409B3243A9BA3008123DA /* Dictionary.swift */; };
+		FFF409B6243BB298008123DA /* Forth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF409B5243BB298008123DA /* Forth.swift */; };
+		FFF409B8243BB63C008123DA /* TokenizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF409B7243BB63C008123DA /* TokenizerTests.swift */; };
+		FFF409BA243BCCCE008123DA /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF409B9243BCCCE008123DA /* Tokenizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +26,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FF3C6453243CF82500306F35 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		FFF40999243A7828008123DA /* StepForth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StepForth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FFF4099C243A7828008123DA /* StepForth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StepForth.h; sourceTree = "<group>"; };
 		FFF4099D243A7828008123DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFF409A2243A7828008123DA /* StepForthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StepForthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FFF409A7243A7828008123DA /* StepForthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepForthTests.swift; sourceTree = "<group>"; };
+		FFF409A7243A7828008123DA /* ForthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForthTests.swift; sourceTree = "<group>"; };
 		FFF409A9243A7828008123DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFF409B3243A9BA3008123DA /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		FFF409B5243BB298008123DA /* Forth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forth.swift; sourceTree = "<group>"; };
+		FFF409B7243BB63C008123DA /* TokenizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenizerTests.swift; sourceTree = "<group>"; };
+		FFF409B9243BCCCE008123DA /* Tokenizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tokenizer.swift; sourceTree = "<group>"; };
+		FFF409BB243BCD46008123DA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,8 @@
 		FFF4098F243A7828008123DA = {
 			isa = PBXGroup;
 			children = (
+				FFF409BB243BCD46008123DA /* README.md */,
+				FF3C6453243CF82500306F35 /* MyPlayground.playground */,
 				FFF4099B243A7828008123DA /* StepForth */,
 				FFF409A6243A7828008123DA /* StepForthTests */,
 				FFF4099A243A7828008123DA /* Products */,
@@ -71,8 +81,10 @@
 		FFF4099B243A7828008123DA /* StepForth */ = {
 			isa = PBXGroup;
 			children = (
-				FFF4099C243A7828008123DA /* StepForth.h */,
+				FFF409B3243A9BA3008123DA /* Dictionary.swift */,
 				FFF4099D243A7828008123DA /* Info.plist */,
+				FFF409B5243BB298008123DA /* Forth.swift */,
+				FFF409B9243BCCCE008123DA /* Tokenizer.swift */,
 			);
 			path = StepForth;
 			sourceTree = "<group>";
@@ -80,7 +92,8 @@
 		FFF409A6243A7828008123DA /* StepForthTests */ = {
 			isa = PBXGroup;
 			children = (
-				FFF409A7243A7828008123DA /* StepForthTests.swift */,
+				FFF409A7243A7828008123DA /* ForthTests.swift */,
+				FFF409B7243BB63C008123DA /* TokenizerTests.swift */,
 				FFF409A9243A7828008123DA /* Info.plist */,
 			);
 			path = StepForthTests;
@@ -93,7 +106,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFF409AA243A7828008123DA /* StepForth.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +160,7 @@
 				TargetAttributes = {
 					FFF40998243A7828008123DA = {
 						CreatedOnToolsVersion = 11.4;
+						LastSwiftMigration = 1140;
 					};
 					FFF409A1243A7828008123DA = {
 						CreatedOnToolsVersion = 11.4;
@@ -195,6 +208,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFF409B4243A9BA3008123DA /* Dictionary.swift in Sources */,
+				FFF409BA243BCCCE008123DA /* Tokenizer.swift in Sources */,
+				FFF409B6243BB298008123DA /* Forth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,7 +218,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFF409A8243A7828008123DA /* StepForthTests.swift in Sources */,
+				FFF409A8243A7828008123DA /* ForthTests.swift in Sources */,
+				FFF409B8243BB63C008123DA /* TokenizerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +357,7 @@
 		FFF409AE243A7828008123DA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = TD4WU76RKW;
@@ -356,6 +374,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = co.kylestewart.StepForth;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +383,7 @@
 		FFF409AF243A7828008123DA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = TD4WU76RKW;
@@ -388,6 +408,7 @@
 		FFF409B1243A7828008123DA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TD4WU76RKW;
 				INFOPLIST_FILE = StepForthTests/Info.plist;
@@ -406,6 +427,7 @@
 		FFF409B2243A7828008123DA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TD4WU76RKW;
 				INFOPLIST_FILE = StepForthTests/Info.plist;
