@@ -6,6 +6,11 @@ struct Forth {
     }
 
     private func tokenToAction(_ token: String) -> Action? {
+        // TODO: string literals? Tokens may need to be enum
+        let word = token
+
+//        let definition = dictionary.lookup(word)
+
         return nil
     }
 
@@ -14,12 +19,12 @@ struct Forth {
     }
 
     func read(line: String) -> String {
-        let tokenizer = Tokenizer(line)
-//        while let token = tokenizer.next() {
+        var tokenizer = Tokenizer(line)
+        while let token = tokenizer.next() {
 //            let action = tokenToAction(token)!
 //
 //            execute(action, tokenizer: tokenizer)
-//        }
+        }
 
         return " ok"
     }
