@@ -5,6 +5,8 @@ class CoreTests: XCTestCase {
 
     let forth = Forth()
 
+    // MARK: - Math
+
     /* Should add numbers on the stack */
     func testMathAdd() throws {
         ReadLine(forth, "10")
@@ -23,7 +25,17 @@ class CoreTests: XCTestCase {
         ReadLine(forth, "22 4 *")
         StackShouldEqual(forth, "10 88 <- Top ")
     }
+
+    // MARK: - Stack Manipulation
+
+    func testSWAP() throws {
+        ReadLine(forth, "10 5 swap")
+        StackShouldEqual(forth, "5 10 <- Top ")
+    }
+
 }
+
+
 
 /*
 
@@ -143,24 +155,6 @@ class CoreTests: XCTestCase {
    });
 
    describe('stack manipulation', function () {
-     describe('swap', function () {
-       it('swaps the top two items', function (done) {
-         executeInSequence([
-           function () {
-             forth.readLine("10 5", this);
-           },
-           function () {
-             expect(forth.getStack()).toBe("10 5 <- Top ");
-
-             forth.readLine("swap", function () {
-               expect(forth.getStack()).toBe("5 10 <- Top ");
-               done();
-             });
-           }
-         ]);
-       });
-     });
-
      describe('dup', function () {
        it('duplicates the top item', function (done) {
          executeInSequence([

@@ -3,7 +3,7 @@ import XCTest
 
 class DictionaryTests: XCTestCase {
 
-    var stack = Stack<String>()
+    var stack = Stack()
     var dictionary = Dictionary()
 
     /* Should be able to lookup added definitions */

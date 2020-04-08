@@ -12,6 +12,7 @@
 		FF4907DF243D3EE40098EB38 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4907DE243D3EE40098EB38 /* Stack.swift */; };
 		FFD1E4F1243E1F2900A706FB /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD1E4F0243E1F2900A706FB /* CoreTests.swift */; };
 		FFD1E4F3243E20D200A706FB /* TestingSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD1E4F2243E20D200A706FB /* TestingSupport.swift */; };
+		FFE53321243E76E800B51329 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE53320243E76E800B51329 /* Core.swift */; };
 		FFF409A3243A7828008123DA /* StepForth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF40999243A7828008123DA /* StepForth.framework */; };
 		FFF409A8243A7828008123DA /* ForthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF409A7243A7828008123DA /* ForthTests.swift */; };
 		FFF409B4243A9BA3008123DA /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF409B3243A9BA3008123DA /* Dictionary.swift */; };
@@ -37,6 +38,7 @@
 		FF4907DE243D3EE40098EB38 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		FFD1E4F0243E1F2900A706FB /* CoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
 		FFD1E4F2243E20D200A706FB /* TestingSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingSupport.swift; sourceTree = "<group>"; };
+		FFE53320243E76E800B51329 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		FFF40999243A7828008123DA /* StepForth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StepForth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFF4099D243A7828008123DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFF409A2243A7828008123DA /* StepForthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StepForthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				FFF409B5243BB298008123DA /* Forth.swift */,
+				FFE53320243E76E800B51329 /* Core.swift */,
 				FFF409B3243A9BA3008123DA /* Dictionary.swift */,
 				FFF409B9243BCCCE008123DA /* Tokenizer.swift */,
 				FF4907DE243D3EE40098EB38 /* Stack.swift */,
@@ -226,6 +229,7 @@
 				FF4907DF243D3EE40098EB38 /* Stack.swift in Sources */,
 				FFF409B4243A9BA3008123DA /* Dictionary.swift in Sources */,
 				FFF409BA243BCCCE008123DA /* Tokenizer.swift in Sources */,
+				FFE53321243E76E800B51329 /* Core.swift in Sources */,
 				FFF409B6243BB298008123DA /* Forth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

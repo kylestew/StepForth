@@ -1,14 +1,7 @@
 import Foundation
 
-/**
- Generic LIFO stack
- */
-class Stack<T> {
-    enum StackError: Error {
-        case StackUnderflowError
-    }
-
-    private var array = [T]()
+class Stack {
+    private var array = [String]()
 
     var isEmpty: Bool {
         return array.isEmpty
@@ -18,23 +11,34 @@ class Stack<T> {
         return array.count
     }
 
-    func push(_ item: T) {
+    func push(_ item: String) {
         array.append(item)
     }
 
-    func peek() -> T? {
+    func peek() -> String? {
         return array.last
     }
 
-    func pop() throws -> T {
+    func pop() throws -> String {
         if let value = array.popLast() {
             return value
         }
-        throw StackError.StackUnderflowError
+        throw ForthError.stackUnderflowError
+    }
+
+    // TODO: should the stack only contain numbers?
+    func pushNumber(_ number: Int) {
+        push(String(number))
+    }
+    func popNumber() throws -> Int {
+        if let val = Int(try pop()) {
+            return val
+        }
+        throw ForthError.stackUnderflowError
     }
 }
 
-extension Stack where T:CustomStringConvertible {
+extension Stack {
     func print() -> String {
         let str = array.map({$0.description}).joined(separator: " ")
         return "\(str) <- Top "

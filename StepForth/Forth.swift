@@ -1,17 +1,60 @@
 import Foundation
 
+
+enum ForthError : Error {
+    case missingWordError(String)
+    case stackUnderflowError
+
+    fileprivate func toOutput() -> ForthOutput {
+        switch self {
+        case .missingWordError(let word):
+            return .missingWord(word)
+        case .stackUnderflowError:
+            return .stackUnderflow
+        }
+    }
+}
+
+fileprivate enum ForthOutput : CustomStringConvertible {
+    case ok
+    case stackUnderflow
+    case missingWord(String)
+
+    var description: String {
+        get {
+            switch self {
+            case .ok:
+                return "ok"
+            case .stackUnderflow:
+                return "Stack underflow"
+            case .missingWord(let word):
+                return "\(word) ? "
+            }
+        }
+    }
+}
+
+
 struct Forth {
 
-    private let dictionary = Dictionary()
-    private let stack = Stack<String>()
+    private let stack = Stack()
+//    private let returnStack = Stack<String>()
+    private var dictionary: Dictionary
+//    private let memory = Memory()
 
-    private func isFinite() -> Bool {
-        return false
+    init() {
+        dictionary = Core.MakeDictionary()
     }
 
-    private func action(for token: String) -> Definition? {
-        // TODO: string literals? Tokens may need to be enum
-        let word = token
+    /**
+     Throw `missingWordError` if word cannot be:
+     - Fetched as a definition from the dictionary
+     - Converted to a number
+     - Treated as a string
+     */
+    private func definition(for word: String) throws -> Definition {
+
+        // TODO: how are string literals handled?
 
         if let definition = dictionary.lookup(word) {
 
@@ -19,37 +62,57 @@ struct Forth {
 
         } else if (Int(word) != nil) {
 
+            // definition to push numeric value on stack
             return { stack in
                 stack.push(word)
             }
 
+        } else {
+            throw ForthError.missingWordError(word)
         }
-
-        return nil
     }
 
-//    private func execute(_ action: Action, tokenizer: Tokenizer) -> String {
-//        return ""
-//    }
+    /**
+     Process individual token from input. Token is fetched from dictionary.
+     FORTH can be defining a definition or in regular mode.
+     */
+    private func process(token: String) throws {
+        let def = try definition(for: token)
 
-//    private func
+        // TODO: add to current definition if in define mode
 
+        // execute
+        try def(stack)
+
+        //                execute(action, tokenizer: tokenizer)
+
+    }
+
+    /**
+     Handle 1 line of input and return status.
+     */
     func read(line: String) -> String {
-
         var tokenizer = Tokenizer(line)
-        while let token = tokenizer.next() {
-            if let def = action(for: token) {
+        var output: ForthOutput = .ok
 
-                try! def(stack)
-//                execute(action, tokenizer: tokenizer)
-
+        do {
+            while let token = tokenizer.next() {
+                try process(token: token)
             }
-
+        } catch let error {
+            if let error = error as? ForthError {
+                output = error.toOutput()
+            } else {
+                fatalError(error.localizedDescription)
+            }
         }
 
-        return " ok"
+        return " \(output)"
     }
 
+    /**
+     Use to display state of stack.
+     */
     func getStack() -> String {
         return stack.print()
     }

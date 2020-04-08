@@ -25,7 +25,6 @@ class ForthTests: XCTestCase {
 
     /* Should handle missing words */
     func testMissingWords() {
-        ReadLine(forth, "10 10 + foo")
         XCTAssertEqual(forth.read(line: "10 10 + foo"), " foo ? ")
     }
 

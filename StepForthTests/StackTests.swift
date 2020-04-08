@@ -3,7 +3,7 @@ import XCTest
 
 class StackTests: XCTestCase {
 
-    var stack = Stack<String>()
+    var stack = Stack()
 
     /* Should return pushed value */
     func testPushPop() throws {
