@@ -3,7 +3,7 @@ import Foundation
 /**
  Generic LIFO stack
  */
-struct Stack<T> {
+class Stack<T> {
     enum StackError: Error {
         case StackUnderflowError
     }
@@ -18,7 +18,7 @@ struct Stack<T> {
         return array.count
     }
 
-    mutating func push(_ item: T) {
+    func push(_ item: T) {
         array.append(item)
     }
 
@@ -26,7 +26,7 @@ struct Stack<T> {
         return array.last
     }
 
-    mutating func pop() throws -> T {
+    func pop() throws -> T {
         if let value = array.popLast() {
             return value
         }
