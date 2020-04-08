@@ -3,13 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		FF4907DB243D2E910098EB38 /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4907DA243D2E910098EB38 /* DictionaryTests.swift */; };
 		FF4907DD243D2F5E0098EB38 /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4907DC243D2F5E0098EB38 /* StackTests.swift */; };
 		FF4907DF243D3EE40098EB38 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4907DE243D3EE40098EB38 /* Stack.swift */; };
+		FFC73BF4243E7EDB0005574B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC73BF3243E7EDB0005574B /* main.swift */; };
+		FFC73BFA243E80C70005574B /* CommandLineKit in Frameworks */ = {isa = PBXBuildFile; productRef = FFC73BF9243E80C70005574B /* CommandLineKit */; };
+		FFC73C01243E82FE0005574B /* Forth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF409B5243BB298008123DA /* Forth.swift */; };
+		FFC73C02243E82FE0005574B /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE53320243E76E800B51329 /* Core.swift */; };
+		FFC73C03243E82FE0005574B /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF409B3243A9BA3008123DA /* Dictionary.swift */; };
+		FFC73C04243E82FE0005574B /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF409B9243BCCCE008123DA /* Tokenizer.swift */; };
+		FFC73C05243E82FE0005574B /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4907DE243D3EE40098EB38 /* Stack.swift */; };
 		FFD1E4F1243E1F2900A706FB /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD1E4F0243E1F2900A706FB /* CoreTests.swift */; };
 		FFD1E4F3243E20D200A706FB /* TestingSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD1E4F2243E20D200A706FB /* TestingSupport.swift */; };
 		FFE53321243E76E800B51329 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE53320243E76E800B51329 /* Core.swift */; };
@@ -31,11 +38,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FFC73BEF243E7EDB0005574B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		FF3C6453243CF82500306F35 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		FF4907DA243D2E910098EB38 /* DictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
 		FF4907DC243D2F5E0098EB38 /* StackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackTests.swift; sourceTree = "<group>"; };
 		FF4907DE243D3EE40098EB38 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		FFC73BF1243E7EDB0005574B /* StepForthCLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = StepForthCLI; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFC73BF3243E7EDB0005574B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		FFD1E4F0243E1F2900A706FB /* CoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
 		FFD1E4F2243E20D200A706FB /* TestingSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingSupport.swift; sourceTree = "<group>"; };
 		FFE53320243E76E800B51329 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
@@ -52,6 +73,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FFC73BEE243E7EDB0005574B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFC73BFA243E80C70005574B /* CommandLineKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FFF40996243A7828008123DA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -70,6 +99,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FFC73BF2243E7EDB0005574B /* StepForthCLI */ = {
+			isa = PBXGroup;
+			children = (
+				FFC73BF3243E7EDB0005574B /* main.swift */,
+			);
+			path = StepForthCLI;
+			sourceTree = "<group>";
+		};
+		FFC73BFB243E822E0005574B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FFF4098F243A7828008123DA = {
 			isa = PBXGroup;
 			children = (
@@ -77,7 +121,9 @@
 				FF3C6453243CF82500306F35 /* MyPlayground.playground */,
 				FFF4099B243A7828008123DA /* StepForth */,
 				FFF409A6243A7828008123DA /* StepForthTests */,
+				FFC73BF2243E7EDB0005574B /* StepForthCLI */,
 				FFF4099A243A7828008123DA /* Products */,
+				FFC73BFB243E822E0005574B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +132,7 @@
 			children = (
 				FFF40999243A7828008123DA /* StepForth.framework */,
 				FFF409A2243A7828008123DA /* StepForthTests.xctest */,
+				FFC73BF1243E7EDB0005574B /* StepForthCLI */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,6 +177,26 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		FFC73BF0243E7EDB0005574B /* StepForthCLI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFC73BF7243E7EDB0005574B /* Build configuration list for PBXNativeTarget "StepForthCLI" */;
+			buildPhases = (
+				FFC73BED243E7EDB0005574B /* Sources */,
+				FFC73BEE243E7EDB0005574B /* Frameworks */,
+				FFC73BEF243E7EDB0005574B /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StepForthCLI;
+			packageProductDependencies = (
+				FFC73BF9243E80C70005574B /* CommandLineKit */,
+			);
+			productName = StepForthCLI;
+			productReference = FFC73BF1243E7EDB0005574B /* StepForthCLI */;
+			productType = "com.apple.product-type.tool";
+		};
 		FFF40998243A7828008123DA /* StepForth */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFF409AD243A7828008123DA /* Build configuration list for PBXNativeTarget "StepForth" */;
@@ -176,6 +243,9 @@
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Kyle Stewart";
 				TargetAttributes = {
+					FFC73BF0243E7EDB0005574B = {
+						CreatedOnToolsVersion = 11.4;
+					};
 					FFF40998243A7828008123DA = {
 						CreatedOnToolsVersion = 11.4;
 						LastSwiftMigration = 1140;
@@ -194,12 +264,16 @@
 				Base,
 			);
 			mainGroup = FFF4098F243A7828008123DA;
+			packageReferences = (
+				FFC73BF8243E80C70005574B /* XCRemoteSwiftPackageReference "swift-commandlinekit" */,
+			);
 			productRefGroup = FFF4099A243A7828008123DA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				FFF40998243A7828008123DA /* StepForth */,
 				FFF409A1243A7828008123DA /* StepForthTests */,
+				FFC73BF0243E7EDB0005574B /* StepForthCLI */,
 			);
 		};
 /* End PBXProject section */
@@ -222,6 +296,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FFC73BED243E7EDB0005574B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFC73C02243E82FE0005574B /* Core.swift in Sources */,
+				FFC73C04243E82FE0005574B /* Tokenizer.swift in Sources */,
+				FFC73C03243E82FE0005574B /* Dictionary.swift in Sources */,
+				FFC73BF4243E7EDB0005574B /* main.swift in Sources */,
+				FFC73C05243E82FE0005574B /* Stack.swift in Sources */,
+				FFC73C01243E82FE0005574B /* Forth.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FFF40995243A7828008123DA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -258,6 +345,32 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		FFC73BF5243E7EDB0005574B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TD4WU76RKW;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		FFC73BF6243E7EDB0005574B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TD4WU76RKW;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		FFF409AB243A7828008123DA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -470,6 +583,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FFC73BF7243E7EDB0005574B /* Build configuration list for PBXNativeTarget "StepForthCLI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFC73BF5243E7EDB0005574B /* Debug */,
+				FFC73BF6243E7EDB0005574B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FFF40993243A7828008123DA /* Build configuration list for PBXProject "StepForth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -498,6 +620,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FFC73BF8243E80C70005574B /* XCRemoteSwiftPackageReference "swift-commandlinekit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/objecthub/swift-commandlinekit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FFC73BF9243E80C70005574B /* CommandLineKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFC73BF8243E80C70005574B /* XCRemoteSwiftPackageReference "swift-commandlinekit" */;
+			productName = CommandLineKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FFF40990243A7828008123DA /* Project object */;
 }
