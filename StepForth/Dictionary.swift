@@ -5,7 +5,7 @@ import Foundation
  Words in Forth are stored in a dictionary
  */
 
-typealias Definition = (Stack) throws -> ()
+typealias Definition = (Stack) throws -> (String)
 
 struct Dictionary {
     private var dict = [(String,Definition)]()

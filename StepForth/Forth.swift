@@ -35,14 +35,14 @@ fileprivate enum ForthOutput : CustomStringConvertible {
 }
 
 
-struct Forth {
+public struct Forth {
 
     private let stack = Stack()
 //    private let returnStack = Stack<String>()
     private var dictionary: Dictionary
 //    private let memory = Memory()
 
-    init() {
+    public init() {
         dictionary = Core.MakeDictionary()
     }
 
@@ -65,6 +65,7 @@ struct Forth {
             // definition to push numeric value on stack
             return { stack in
                 stack.push(word)
+                return ""
             }
 
         } else {
@@ -76,38 +77,40 @@ struct Forth {
      Process individual token from input. Token is fetched from dictionary.
      FORTH can be defining a definition or in regular mode.
      */
-    private func process(token: String) throws {
+    private func process(token: String) throws -> String {
         let def = try definition(for: token)
 
         // TODO: add to current definition if in define mode
 
         // execute
-        try def(stack)
+        let output = try def(stack)
 
         //                execute(action, tokenizer: tokenizer)
 
+        return output
     }
 
     /**
      Handle 1 line of input and return status.
      */
-    func read(line: String) -> String {
+    public func read(line: String) -> String {
         var tokenizer = Tokenizer(line)
-        var output: ForthOutput = .ok
+        var output = ""
+        var result: ForthOutput = .ok
 
         do {
             while let token = tokenizer.next() {
-                try process(token: token)
+                output += try process(token: token)
             }
         } catch let error {
             if let error = error as? ForthError {
-                output = error.toOutput()
+                result = error.toOutput()
             } else {
                 fatalError(error.localizedDescription)
             }
         }
 
-        return " \(output)"
+        return "\(output) \(result)"
     }
 
     /**

@@ -1,8 +1,7 @@
 import Foundation
 import CommandLineKit
+import StepForthMac
 
-// not included as framework since its made for iOS
-// TODO: upgrade it for MacOS as well
 let forth = Forth()
 
 if let ln = LineReader() {

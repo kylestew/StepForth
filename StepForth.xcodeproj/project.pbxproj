@@ -12,11 +12,14 @@
 		FF4907DF243D3EE40098EB38 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4907DE243D3EE40098EB38 /* Stack.swift */; };
 		FFC73BF4243E7EDB0005574B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC73BF3243E7EDB0005574B /* main.swift */; };
 		FFC73BFA243E80C70005574B /* CommandLineKit in Frameworks */ = {isa = PBXBuildFile; productRef = FFC73BF9243E80C70005574B /* CommandLineKit */; };
-		FFC73C01243E82FE0005574B /* Forth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF409B5243BB298008123DA /* Forth.swift */; };
-		FFC73C02243E82FE0005574B /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE53320243E76E800B51329 /* Core.swift */; };
-		FFC73C03243E82FE0005574B /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF409B3243A9BA3008123DA /* Dictionary.swift */; };
-		FFC73C04243E82FE0005574B /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF409B9243BCCCE008123DA /* Tokenizer.swift */; };
-		FFC73C05243E82FE0005574B /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4907DE243D3EE40098EB38 /* Stack.swift */; };
+		FFC73C1B243E842B0005574B /* StepForthMac.h in Headers */ = {isa = PBXBuildFile; fileRef = FFC73C0D243E842A0005574B /* StepForthMac.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FFC73C22243E84450005574B /* Forth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF409B5243BB298008123DA /* Forth.swift */; };
+		FFC73C23243E84450005574B /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE53320243E76E800B51329 /* Core.swift */; };
+		FFC73C24243E84450005574B /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF409B3243A9BA3008123DA /* Dictionary.swift */; };
+		FFC73C25243E84450005574B /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF409B9243BCCCE008123DA /* Tokenizer.swift */; };
+		FFC73C26243E84450005574B /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4907DE243D3EE40098EB38 /* Stack.swift */; };
+		FFC73C27243E845D0005574B /* StepForthMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC73C0B243E842A0005574B /* StepForthMac.framework */; };
+		FFC73C28243E845D0005574B /* StepForthMac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FFC73C0B243E842A0005574B /* StepForthMac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FFD1E4F1243E1F2900A706FB /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD1E4F0243E1F2900A706FB /* CoreTests.swift */; };
 		FFD1E4F3243E20D200A706FB /* TestingSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD1E4F2243E20D200A706FB /* TestingSupport.swift */; };
 		FFE53321243E76E800B51329 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE53320243E76E800B51329 /* Core.swift */; };
@@ -29,6 +32,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		FFC73C29243E845D0005574B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFF40990243A7828008123DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFC73C0A243E842A0005574B;
+			remoteInfo = StepForthMac;
+		};
 		FFF409A4243A7828008123DA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FFF40990243A7828008123DA /* Project object */;
@@ -48,6 +58,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		FFC73C2B243E845D0005574B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FFC73C28243E845D0005574B /* StepForthMac.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +78,9 @@
 		FF4907DE243D3EE40098EB38 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		FFC73BF1243E7EDB0005574B /* StepForthCLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = StepForthCLI; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC73BF3243E7EDB0005574B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		FFC73C0B243E842A0005574B /* StepForthMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StepForthMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFC73C0D243E842A0005574B /* StepForthMac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StepForthMac.h; sourceTree = "<group>"; };
+		FFC73C0E243E842A0005574B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFD1E4F0243E1F2900A706FB /* CoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
 		FFD1E4F2243E20D200A706FB /* TestingSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingSupport.swift; sourceTree = "<group>"; };
 		FFE53320243E76E800B51329 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
@@ -77,7 +101,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFC73C27243E845D0005574B /* StepForthMac.framework in Frameworks */,
 				FFC73BFA243E80C70005574B /* CommandLineKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFC73C08243E842A0005574B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +146,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FFC73C0C243E842A0005574B /* StepForthMac */ = {
+			isa = PBXGroup;
+			children = (
+				FFC73C0D243E842A0005574B /* StepForthMac.h */,
+				FFC73C0E243E842A0005574B /* Info.plist */,
+			);
+			path = StepForthMac;
+			sourceTree = "<group>";
+		};
 		FFF4098F243A7828008123DA = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +163,7 @@
 				FFF4099B243A7828008123DA /* StepForth */,
 				FFF409A6243A7828008123DA /* StepForthTests */,
 				FFC73BF2243E7EDB0005574B /* StepForthCLI */,
+				FFC73C0C243E842A0005574B /* StepForthMac */,
 				FFF4099A243A7828008123DA /* Products */,
 				FFC73BFB243E822E0005574B /* Frameworks */,
 			);
@@ -133,6 +175,7 @@
 				FFF40999243A7828008123DA /* StepForth.framework */,
 				FFF409A2243A7828008123DA /* StepForthTests.xctest */,
 				FFC73BF1243E7EDB0005574B /* StepForthCLI */,
+				FFC73C0B243E842A0005574B /* StepForthMac.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -167,6 +210,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		FFC73C06243E842A0005574B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFC73C1B243E842B0005574B /* StepForthMac.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FFF40994243A7828008123DA /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -184,10 +235,12 @@
 				FFC73BED243E7EDB0005574B /* Sources */,
 				FFC73BEE243E7EDB0005574B /* Frameworks */,
 				FFC73BEF243E7EDB0005574B /* CopyFiles */,
+				FFC73C2B243E845D0005574B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FFC73C2A243E845D0005574B /* PBXTargetDependency */,
 			);
 			name = StepForthCLI;
 			packageProductDependencies = (
@@ -196,6 +249,24 @@
 			productName = StepForthCLI;
 			productReference = FFC73BF1243E7EDB0005574B /* StepForthCLI */;
 			productType = "com.apple.product-type.tool";
+		};
+		FFC73C0A243E842A0005574B /* StepForthMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFC73C1C243E842B0005574B /* Build configuration list for PBXNativeTarget "StepForthMac" */;
+			buildPhases = (
+				FFC73C06243E842A0005574B /* Headers */,
+				FFC73C07243E842A0005574B /* Sources */,
+				FFC73C08243E842A0005574B /* Frameworks */,
+				FFC73C09243E842A0005574B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StepForthMac;
+			productName = StepForthMac;
+			productReference = FFC73C0B243E842A0005574B /* StepForthMac.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 		FFF40998243A7828008123DA /* StepForth */ = {
 			isa = PBXNativeTarget;
@@ -246,6 +317,9 @@
 					FFC73BF0243E7EDB0005574B = {
 						CreatedOnToolsVersion = 11.4;
 					};
+					FFC73C0A243E842A0005574B = {
+						CreatedOnToolsVersion = 11.4;
+					};
 					FFF40998243A7828008123DA = {
 						CreatedOnToolsVersion = 11.4;
 						LastSwiftMigration = 1140;
@@ -271,6 +345,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				FFC73C0A243E842A0005574B /* StepForthMac */,
 				FFF40998243A7828008123DA /* StepForth */,
 				FFF409A1243A7828008123DA /* StepForthTests */,
 				FFC73BF0243E7EDB0005574B /* StepForthCLI */,
@@ -279,6 +354,13 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FFC73C09243E842A0005574B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FFF40997243A7828008123DA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -300,12 +382,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFC73C02243E82FE0005574B /* Core.swift in Sources */,
-				FFC73C04243E82FE0005574B /* Tokenizer.swift in Sources */,
-				FFC73C03243E82FE0005574B /* Dictionary.swift in Sources */,
 				FFC73BF4243E7EDB0005574B /* main.swift in Sources */,
-				FFC73C05243E82FE0005574B /* Stack.swift in Sources */,
-				FFC73C01243E82FE0005574B /* Forth.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFC73C07243E842A0005574B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFC73C23243E84450005574B /* Core.swift in Sources */,
+				FFC73C26243E84450005574B /* Stack.swift in Sources */,
+				FFC73C25243E84450005574B /* Tokenizer.swift in Sources */,
+				FFC73C22243E84450005574B /* Forth.swift in Sources */,
+				FFC73C24243E84450005574B /* Dictionary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +426,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		FFC73C2A243E845D0005574B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FFC73C0A243E842A0005574B /* StepForthMac */;
+			targetProxy = FFC73C29243E845D0005574B /* PBXContainerItemProxy */;
+		};
 		FFF409A5243A7828008123DA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FFF40998243A7828008123DA /* StepForth */;
@@ -367,6 +461,58 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		FFC73C1D243E842B0005574B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = TD4WU76RKW;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = StepForthMac/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = co.kylestewart.StepForthMac;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		FFC73C1E243E842B0005574B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = TD4WU76RKW;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = StepForthMac/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = co.kylestewart.StepForthMac;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -588,6 +734,15 @@
 			buildConfigurations = (
 				FFC73BF5243E7EDB0005574B /* Debug */,
 				FFC73BF6243E7EDB0005574B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFC73C1C243E842B0005574B /* Build configuration list for PBXNativeTarget "StepForthMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFC73C1D243E842B0005574B /* Debug */,
+				FFC73C1E243E842B0005574B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

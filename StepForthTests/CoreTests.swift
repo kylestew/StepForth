@@ -5,6 +5,18 @@ class CoreTests: XCTestCase {
 
     let forth = Forth()
 
+    // MARK: - Output
+
+    func testOutputTopOfStack() throws {
+        XCTAssertEqual(forth.read(line: "1 2 3 ."), "3  ok")
+        StackShouldEqual(forth, "1 2 <- Top ")
+    }
+
+    func testOutputFullStack() throws {
+        XCTAssertEqual(forth.read(line: "1 2 3 .S"), "1 2 3 <- Top  ok")
+        StackShouldEqual(forth, "1 2 3 <- Top ")
+    }
+    
     // MARK: - Math
 
     /* Should add numbers on the stack */
@@ -229,25 +241,7 @@ class CoreTests: XCTestCase {
    });
 
    describe('output', function () {
-     describe('.', function () {
-       it('pops and outputs the top of the stack as a number', function (done) {
-         collectOutput(forth.readLine, "1 2 3 .", function (output) {
-           expect(forth.getStack()).toBe("1 2 <- Top ");
-           expect(output).toBe("3  ok");
-           done();
-         });
-       });
-     });
 
-     describe('.s', function () {
-       it('outputs the contents of the stack', function (done) {
-         collectOutput(forth.readLine, "1 2 3 .s", function (output) {
-           expect(forth.getStack()).toBe("1 2 3 <- Top ");
-           expect(output).toBe("\n1 2 3 <- Top  ok");
-           done();
-         });
-       });
-     });
 
      describe('cr', function () {
        it('outputs a newline', function (done) {
