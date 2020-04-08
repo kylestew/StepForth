@@ -10,6 +10,8 @@
 		FF4907DB243D2E910098EB38 /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4907DA243D2E910098EB38 /* DictionaryTests.swift */; };
 		FF4907DD243D2F5E0098EB38 /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4907DC243D2F5E0098EB38 /* StackTests.swift */; };
 		FF4907DF243D3EE40098EB38 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4907DE243D3EE40098EB38 /* Stack.swift */; };
+		FFD1E4F1243E1F2900A706FB /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD1E4F0243E1F2900A706FB /* CoreTests.swift */; };
+		FFD1E4F3243E20D200A706FB /* TestingSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD1E4F2243E20D200A706FB /* TestingSupport.swift */; };
 		FFF409A3243A7828008123DA /* StepForth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF40999243A7828008123DA /* StepForth.framework */; };
 		FFF409A8243A7828008123DA /* ForthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF409A7243A7828008123DA /* ForthTests.swift */; };
 		FFF409B4243A9BA3008123DA /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF409B3243A9BA3008123DA /* Dictionary.swift */; };
@@ -33,6 +35,8 @@
 		FF4907DA243D2E910098EB38 /* DictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
 		FF4907DC243D2F5E0098EB38 /* StackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackTests.swift; sourceTree = "<group>"; };
 		FF4907DE243D3EE40098EB38 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		FFD1E4F0243E1F2900A706FB /* CoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
+		FFD1E4F2243E20D200A706FB /* TestingSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingSupport.swift; sourceTree = "<group>"; };
 		FFF40999243A7828008123DA /* StepForth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StepForth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFF4099D243A7828008123DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFF409A2243A7828008123DA /* StepForthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StepForthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,9 +104,11 @@
 			isa = PBXGroup;
 			children = (
 				FFF409A7243A7828008123DA /* ForthTests.swift */,
+				FFD1E4F0243E1F2900A706FB /* CoreTests.swift */,
 				FFF409B7243BB63C008123DA /* TokenizerTests.swift */,
 				FF4907DA243D2E910098EB38 /* DictionaryTests.swift */,
 				FF4907DC243D2F5E0098EB38 /* StackTests.swift */,
+				FFD1E4F2243E20D200A706FB /* TestingSupport.swift */,
 				FFF409A9243A7828008123DA /* Info.plist */,
 			);
 			path = StepForthTests;
@@ -228,7 +234,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFD1E4F3243E20D200A706FB /* TestingSupport.swift in Sources */,
 				FF4907DD243D2F5E0098EB38 /* StackTests.swift in Sources */,
+				FFD1E4F1243E1F2900A706FB /* CoreTests.swift in Sources */,
 				FFF409A8243A7828008123DA /* ForthTests.swift in Sources */,
 				FFF409B8243BB63C008123DA /* TokenizerTests.swift in Sources */,
 				FF4907DB243D2E910098EB38 /* DictionaryTests.swift in Sources */,
