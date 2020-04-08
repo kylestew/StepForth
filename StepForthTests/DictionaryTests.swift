@@ -12,6 +12,7 @@ class DictionaryTests: XCTestCase {
             let a = try stack.pop()
             let b = try stack.pop()
             stack.push(a + b)
+            return ""
         })
         XCTAssertNotNil(dictionary.lookup("+"))
     }
@@ -24,6 +25,7 @@ class DictionaryTests: XCTestCase {
     /* Should not be case sensitive */
     func testCaseInsensitive() {
         dictionary.add("BOB", { stack in
+            return ""
         })
         XCTAssertNotNil(dictionary.lookup("bob"))
     }
@@ -35,10 +37,12 @@ class DictionaryTests: XCTestCase {
 
         dictionary.add("BOB", { stack in
             firstDefinitionCalled += 1
+            return ""
         })
 
         dictionary.add("bob", { stack in
             secondDefinitionCalled += 1
+            return ""
         })
 
         try dictionary.lookup("bob")!(stack)
