@@ -38,6 +38,34 @@ class CoreTests: XCTestCase {
         StackShouldEqual(forth, "10 88 <- Top ")
     }
 
+    func testMathDivide() throws {
+        ReadLine(forth, "10")
+        ReadLine(forth, "22 4 /")
+        StackShouldEqual(forth, "10 5 <- Top ")
+    }
+
+    func testMathMod() throws {
+        ReadLine(forth, "10")
+        ReadLine(forth, "22 4 mod")
+        StackShouldEqual(forth, "10 2 <- Top ")
+    }
+
+    func testMathSlashMod() throws {
+        ReadLine(forth, "10")
+        ReadLine(forth, "22 4 /mod")
+        StackShouldEqual(forth, "10 2 5 <- Top ")
+    }
+
+    // MARK: - Comparison
+
+    func testEquals() throws {
+        ReadLine(forth, "10")
+        ReadLine(forth, "5 5 =")
+        StackShouldEqual(forth, "10 -1 <- Top ")
+        ReadLine(forth, "4 5 =")
+        StackShouldEqual(forth, "10 -1 0 <- Top ")
+    }
+
     // MARK: - Stack Manipulation
 
     func testSWAP() throws {
@@ -52,77 +80,7 @@ class CoreTests: XCTestCase {
 /*
 
  describe('predefined words', function () {
-   describe('arithmetic', function () {
-     describe('/', function () {
-       it('divides numbers on the stack', function (done) {
-         executeInSequence([
-           function () {
-             forth.readLine("10", this);
-           },
-           function () {
-             forth.readLine("22 4 /", this);
-           },
-           function () {
-             expect(forth.getStack()).toBe("10 5 <- Top ");
-             done();
-           }
-         ]);
-       });
-     });
-
-     describe('mod', function () {
-       it('mods numbers on the stack', function (done) {
-         executeInSequence([
-           function () {
-             forth.readLine("10", this);
-           },
-           function () {
-             forth.readLine("22 4 mod", this);
-           },
-           function () {
-             expect(forth.getStack()).toBe("10 2 <- Top ");
-             done();
-           }
-         ]);
-       });
-     });
-
-     describe('/mod', function () {
-       it('mods and divides numbers on the stack', function (done) {
-         forth.readLines([
-           "10",
-           "22 4 /mod"
-         ], function () {
-           expect(forth.getStack()).toBe("10 2 5 <- Top ");
-           done();
-         });
-       });
-     });
-   });
-
    describe('comparison', function () {
-     describe('=', function () {
-       it('compares numbers on the stack for equality', function (done) {
-         executeInSequence([
-           function () {
-             forth.readLines([
-               "10",
-               "5 5 ="
-             ], this);
-           },
-           function () {
-             expect(forth.getStack()).toBe("10 -1 <- Top ");
-
-             forth.readLine("4 5 =", this);
-           },
-           function () {
-             expect(forth.getStack()).toBe("10 -1 0 <- Top ");
-             done();
-           }
-         ]);
-       });
-     });
-
      describe('<', function () {
        it('checks to see if second item is less than top item on stack', function (done) {
          executeInSequence([

@@ -49,47 +49,24 @@ class ForthTests: XCTestCase {
         // no output should be produced
         XCTAssertEqual(forth.read(line: ": add-20  10 + "), "")
         XCTAssertEqual(forth.read(line: " 5 + "), "")
+        // final link has " ok" output
         ReadLine(forth, " 5 + ;")
-
         ReadLine(forth, "5 add-20")
         StackShouldEqual(forth, "25 <- Top ")
     }
 
     // MARK: Control Structures
 
+    func testIfElseThen() {
+        ReadLine(forth, ": foo  -1 if 1 else 2 then 3 ; ")
+        ReadLine(forth, "foo")
+        StackShouldEqual(forth, "1 3 <- Top ")
+    }
 
 
     /*
      describe('defining words', function () {
        describe(': ;', function () {
-         describe('over multiple lines', function () {
-           it('uses all lines for word definition', function (done) {
-             executeInSequence([
-               function () {
-                 collectOutput(forth.readLine, ": add-20  10 + ", this);
-               },
-               function (output) {
-                 expect(output).toBe(""); // no output should be produced
-
-                 collectOutput(forth.readLine, " 5 + ", this);
-               },
-               function (output) {
-                 expect(output).toBe(""); // no output should be produced
-
-                 collectOutput(forth.readLine, " 5 + ; ", this);
-               },
-               function (output) {
-                 expect(output).toBe(" ok"); // output ok after definition
-
-                 forth.readLine("5 add-20", function () {
-                   expect(forth.getStack()).toBe("25 <- Top ");
-                   done();
-                 });
-               }
-             ]);
-           });
-         });
-
          describe('with missing words in definition', function () {
            it('outputs error and stops definition', function (done) {
              executeInSequence([
