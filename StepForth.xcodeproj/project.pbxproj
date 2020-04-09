@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FF4907DB243D2E910098EB38 /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4907DA243D2E910098EB38 /* DictionaryTests.swift */; };
 		FF4907DD243D2F5E0098EB38 /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4907DC243D2F5E0098EB38 /* StackTests.swift */; };
 		FF4907DF243D3EE40098EB38 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4907DE243D3EE40098EB38 /* Stack.swift */; };
+		FF4DED16243F7C1600D352D3 /* Compiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4DED15243F7C1600D352D3 /* Compiler.swift */; };
+		FFC1001A243EE0ED00560E97 /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4907DA243D2E910098EB38 /* DictionaryTests.swift */; };
 		FFC73BF4243E7EDB0005574B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC73BF3243E7EDB0005574B /* main.swift */; };
 		FFC73BFA243E80C70005574B /* CommandLineKit in Frameworks */ = {isa = PBXBuildFile; productRef = FFC73BF9243E80C70005574B /* CommandLineKit */; };
 		FFC73C1B243E842B0005574B /* StepForthMac.h in Headers */ = {isa = PBXBuildFile; fileRef = FFC73C0D243E842A0005574B /* StepForthMac.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -76,6 +77,7 @@
 		FF4907DA243D2E910098EB38 /* DictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
 		FF4907DC243D2F5E0098EB38 /* StackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackTests.swift; sourceTree = "<group>"; };
 		FF4907DE243D3EE40098EB38 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		FF4DED15243F7C1600D352D3 /* Compiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compiler.swift; sourceTree = "<group>"; };
 		FFC73BF1243E7EDB0005574B /* StepForthCLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = StepForthCLI; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC73BF3243E7EDB0005574B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		FFC73C0B243E842A0005574B /* StepForthMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StepForthMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				FFF409B5243BB298008123DA /* Forth.swift */,
+				FF4DED15243F7C1600D352D3 /* Compiler.swift */,
 				FFE53320243E76E800B51329 /* Core.swift */,
 				FFF409B3243A9BA3008123DA /* Dictionary.swift */,
 				FFF409B9243BCCCE008123DA /* Tokenizer.swift */,
@@ -406,6 +409,7 @@
 				FFF409B4243A9BA3008123DA /* Dictionary.swift in Sources */,
 				FFF409BA243BCCCE008123DA /* Tokenizer.swift in Sources */,
 				FFE53321243E76E800B51329 /* Core.swift in Sources */,
+				FF4DED16243F7C1600D352D3 /* Compiler.swift in Sources */,
 				FFF409B6243BB298008123DA /* Forth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,7 +423,7 @@
 				FFD1E4F1243E1F2900A706FB /* CoreTests.swift in Sources */,
 				FFF409A8243A7828008123DA /* ForthTests.swift in Sources */,
 				FFF409B8243BB63C008123DA /* TokenizerTests.swift in Sources */,
-				FF4907DB243D2E910098EB38 /* DictionaryTests.swift in Sources */,
+				FFC1001A243EE0ED00560E97 /* DictionaryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

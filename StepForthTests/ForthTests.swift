@@ -28,8 +28,32 @@ class ForthTests: XCTestCase {
         XCTAssertEqual(forth.read(line: "10 10 + foo"), " foo ? ")
     }
 
-
     // MARK: Defining Words
+
+    /* Should define a new word */
+    func testDefineWord() {
+        ReadLine(forth, ": add-10  10 + ;")
+        ReadLine(forth, "5 add-10")
+        StackShouldEqual(forth, "15 <- Top ")
+    }
+
+    /* Should define a word with code before and after */
+    func testDefineWordExtraCode() {
+        ReadLine(forth, "100 : add-10  10 + ; 200")
+        ReadLine(forth, "5 add-10")
+        StackShouldEqual(forth, "100 200 15 <- Top ")
+    }
+
+    /* Should define a word over multiple lines */
+    func testDefineWordMultipleLines() {
+        // no output should be produced
+        XCTAssertEqual(forth.read(line: ": add-20  10 + "), "")
+        XCTAssertEqual(forth.read(line: " 5 + "), "")
+        ReadLine(forth, " 5 + ;")
+
+        ReadLine(forth, "5 add-20")
+        StackShouldEqual(forth, "25 <- Top ")
+    }
 
     // MARK: Control Structures
 
@@ -38,40 +62,6 @@ class ForthTests: XCTestCase {
     /*
      describe('defining words', function () {
        describe(': ;', function () {
-         it('defines a new word', function (done) {
-           executeInSequence([
-             function () {
-               collectOutput(forth.readLine, ": add-10  10 + ;", this);
-             },
-             function (output) {
-               expect(output).toBe(" ok");
-
-               forth.readLine("5 add-10", function () {
-                 expect(forth.getStack()).toBe("15 <- Top ");
-                 done();
-               });
-             }
-           ]);
-         });
-
-         describe('with code before and after', function () {
-           it('executes code before and after, and defines word', function (done) {
-             executeInSequence([
-               function () {
-                 collectOutput(forth.readLine, "100 : add-10  10 + ; 200", this);
-               },
-               function (output) {
-                 expect(output).toBe(" ok");
-
-                 forth.readLine("5 add-10", function () {
-                   expect(forth.getStack()).toBe("100 200 15 <- Top ");
-                   done();
-                 });
-               }
-             ]);
-           });
-         });
-
          describe('over multiple lines', function () {
            it('uses all lines for word definition', function (done) {
              executeInSequence([

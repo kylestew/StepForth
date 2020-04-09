@@ -5,12 +5,16 @@ import Foundation
  Words in Forth are stored in a dictionary
  */
 
-typealias Definition = (Stack) throws -> (String)
+typealias Action = (Stack) throws -> (String)
+enum Definition {
+    case control(String)
+    case action(Action)
+}
 
 struct Dictionary {
     private var dict = [(String,Definition)]()
 
-    mutating func add(_ name: String, _ definition: @escaping Definition) {
+    mutating func add(_ name: String, _ definition: Definition) {
         dict.insert((name, definition), at: 0)
     }
 
